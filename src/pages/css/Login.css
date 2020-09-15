@@ -1,0 +1,39 @@
+.login {
+  height: 100vh;
+  display: grid;
+  place-items: center;
+}
+.login__container {
+  background: #f3f3f3;
+  border: 1px solid lightgray;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.login__logo {
+  object-fit: contain;
+  height: 200px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.login__container > span {
+  color: gray;
+  font-size: 14px;
+  padding: 5px;
+}
+
+.login__container > p {
+  font-size: 18px;
+  padding: 10px;
+}
+
+.login__container > button {
+  padding: 10px;
+  background-color: #b84f4f;
+  color: white;
+  font-size: 20px;
+  border: none;
+}

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import TinderCard from "react-tinder-card";
 import "./css/TinderCards.css";
-import db from "./db/axios";
+import db from "../db/axios";
 function TinderCards() {
   const [people, setPeople] = useState([]);
   const swiped = (dir, name) => {};

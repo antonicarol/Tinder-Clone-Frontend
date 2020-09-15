@@ -1,0 +1,65 @@
+.modal {
+  display: grid;
+  place-items: center;
+}
+
+.setUpProfile {
+  background-color: white;
+  width: 60vw;
+  height: auto;
+}
+
+.setUpProfile__title {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px double lightgray;
+}
+
+.setUpProfile__title > img {
+  object-fit: contain;
+  width: 80px;
+}
+.setUpProfile__title > h3 {
+  text-align: center;
+}
+
+.setUpProfile__form {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+.setUpProfile__form > p {
+  text-align: center;
+}
+
+.setUpProfile__formInput__texts {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 20px;
+}
+
+.setUpProfile__formInput__texts > .MuiInputBase-root {
+  margin: 10px !important;
+}
+.setUpProfile__formInput__gender {
+  display: flex;
+  flex-direction: column;
+}
+
+.setUpProfile__radioGroup {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: space-evenly;
+}
+
+.setUpProfile__formInput__gender > h4 {
+  text-align: center;
+  margin-top: 20px;
+}
+
+@media all and (max-width: 575px) {
+  .setUpProfile__title > img {
+    display: none;
+  }
+}
