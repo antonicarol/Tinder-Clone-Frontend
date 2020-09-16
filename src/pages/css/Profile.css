@@ -1,0 +1,50 @@
+.profile__top {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex: 0.6;
+}
+
+.profile__profilePic {
+  object-fit: contain;
+  width: 40vw;
+  padding: 20px;
+  border-radius: 999px;
+}
+
+.profile__topInfo {
+  padding: 10px;
+}
+
+.profile__topInfo > h1,
+h3,
+p {
+  text-align: center;
+  padding: 10px;
+}
+
+.profile__bottom {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.profile__passions,
+.profile__orientation {
+  text-align: center;
+  padding: 10px;
+}
+
+.profile__passions > h2,
+.profile__orientation > h2 {
+  padding: 20px;
+}
+
+.profile__passions > div,
+.profile__orientation > div {
+  display: grid;
+  place-items: center;
+}
+.profile__passions > div > button,
+.profile__orientation > div > button {
+  margin: 10px;
+}

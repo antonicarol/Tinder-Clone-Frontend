@@ -1,16 +1,19 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./css/Login.css";
 import { auth, GoogleProvider } from "../firebase/firebase";
 import { useStateValue } from "../context/StateProvider";
 import { actionTypes } from "../context/reducer";
+import { useHistory } from "react-router-dom";
 function Login() {
-  const [{ user }, dispatch] = useStateValue();
+  const history = useHistory();
+  const [state, dispatch] = useStateValue();
   const signInWithGoogle = () => {
     auth.signInWithPopup(GoogleProvider).then((res) => {
       dispatch({
         type: actionTypes.SET_FB_USER,
         user: res.user,
       });
+      history.push("/home");
     });
   };
   return (
@@ -24,9 +27,8 @@ function Login() {
         <p>Welcome to the Tinder Clone, created by @antonicarol</p>
         <span>
           This is not the official Tinder, so feel free to leave some feedaback
-          😄
         </span>
-        <p>Login to an Account to start finding the love of yout life 😉</p>
+        <p>Login to an Account to start finding the love of yout life </p>
 
         <button onClick={signInWithGoogle}>
           Sign in with a Google Account

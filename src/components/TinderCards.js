@@ -27,7 +27,7 @@ function TinderCards() {
             onCardLeftScreen={() => outOFFframe(person.name)}
           >
             <div
-              style={{ backgroundImage: `url(${person.imgUrl})` }}
+              style={{ backgroundImage: `url(${person.profile.profilePic})` }}
               className="card"
             >
               <h3>{person.name}</h3>

@@ -1,14 +1,18 @@
-import { Modal } from "@material-ui/core";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import "./App.css";
-import Header from "./components/Header";
-import SwipeButtons from "./components/SwipeButtons";
-import TinderCards from "./components/TinderCards";
+import Profile from "./pages/Profile";
 import { useStateValue } from "./context/StateProvider";
 import Login from "./pages/Login";
 import db from "./db/axios";
 import Home from "./pages/Home";
 import { actionTypes } from "./context/reducer";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
+
 function App() {
   const [{ user }, dispatch] = useStateValue();
   useEffect(() => {
@@ -19,15 +23,18 @@ function App() {
         email: user.email,
         firstTime: false,
         profile: {
-          pics: [],
+          profilePic: "",
           gender: "",
           age: 0,
+          passions: [],
+          orientation: [],
         },
       }).then((res) => console.log(res.data));
     }
-  }, []);
+  }, [user]);
 
   useEffect(() => {
+    console.log("hey");
     db.get(`/tinder/user/${user?.email}`).then((res) => {
       dispatch({
         type: actionTypes.SET_DB_USER,
@@ -35,7 +42,27 @@ function App() {
       });
     });
   }, [user]);
-  return <div className="app">{user === null ? <Login /> : <Home />}</div>;
+
+  return (
+    <div className="app">
+      <Router>
+        <Switch>
+          <Route path="/profile">
+            <Profile />
+          </Route>
+          <Route path="/login">
+            <Login />
+          </Route>
+          <Route path="/home">
+            <Home />
+          </Route>
+          <Route path="/">
+            {user == null ? <Redirect to="/login" /> : <Redirect to="/home" />}
+          </Route>
+        </Switch>
+      </Router>
+    </div>
+  );
 }
 
 export default App;

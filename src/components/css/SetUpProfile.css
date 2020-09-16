@@ -1,12 +1,7 @@
-.modal {
-  display: grid;
-  place-items: center;
-}
-
 .setUpProfile {
   background-color: white;
-  width: 60vw;
-  height: auto;
+  height: 100vh;
+  width: 100vw;
 }
 
 .setUpProfile__title {
@@ -28,15 +23,27 @@
   display: flex;
   flex-direction: column;
   padding: 10px;
+  position: relative;
 }
 .setUpProfile__form > p {
   text-align: center;
 }
 
-.setUpProfile__formInput__texts {
+.setUpProfile__required {
   display: flex;
   justify-content: space-evenly;
+}
+
+.setUpProfile__formInput__texts {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
   margin-top: 20px;
+}
+
+.setUpProfile__formInput__texts > .birthday {
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .setUpProfile__formInput__texts > .MuiInputBase-root {
@@ -45,17 +52,73 @@
 .setUpProfile__formInput__gender {
   display: flex;
   flex-direction: column;
+  margin-top: 10px;
 }
 
 .setUpProfile__radioGroup {
   display: flex !important;
-  flex-direction: row !important;
+  flex-direction: column !important;
   justify-content: space-evenly;
 }
 
 .setUpProfile__formInput__gender > h4 {
   text-align: center;
   margin-top: 20px;
+}
+
+.setUpProfile__formInput__images {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  margin-top: 20px;
+}
+
+.setUpProfile__optional {
+  display: flex;
+
+  justify-content: space-evenly;
+}
+
+.setUpProfile__optional__sexOrient,
+.setUpProfile__optional__passions {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.setUpProfile__optional__sexOrient > h3,
+.setUpProfile__optional__passions > h3 {
+  padding: 20px;
+  border-bottom: 1px solid lightgray;
+}
+
+.setUpProfile__optional__sexOrient,
+.setUpProfile__optional__passions > div {
+  display: flex;
+  margin-left: 30px;
+}
+.setUpProfile__optional__sexOrient,
+.setUpProfile__optional__passions > div > button {
+  margin: 10px 0;
+}
+
+.setUpProfile__optional__sexOrient > div > button:hover,
+.setUpProfile__optional__passions > div > button:hover {
+  border-color: red !important;
+  color: red !important;
+}
+
+.submitButton {
+  position: fixed !important;
+  bottom: 10px;
+  width: 100% !important;
+  background-color: #f3f3f3 !important;
+}
+
+.submitButton:hover {
+  color: green !important;
 }
 
 @media all and (max-width: 575px) {
