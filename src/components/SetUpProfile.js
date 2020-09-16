@@ -9,7 +9,8 @@ import {
   RadioGroup,
   TextField,
 } from "@material-ui/core";
-import "date-fns";
+
+import useGeolocation from "react-hook-geolocation";
 
 import React, { useState } from "react";
 import "./css/SetUpProfile.css";
@@ -22,6 +23,7 @@ import { useHistory } from "react-router-dom";
 
 function SetUpProfile() {
   const history = useHistory();
+  const geolocation = useGeolocation();
   const [{ user }, dispatch] = useStateValue();
 
   const [username, setUsername] = useState("");
@@ -53,6 +55,10 @@ function SetUpProfile() {
       pic: imageUrl,
       passions: passions,
       orientation: orientation,
+      location: {
+        lat: geolocation.latitude,
+        long: geolocation.longitude,
+      },
     }).then((result) => {
       console.log(result.data);
       history.push("/home");

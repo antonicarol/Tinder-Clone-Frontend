@@ -1,0 +1,15 @@
+.home__container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.home__left {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  width: 15%;
+}
+
+.home__body {
+  flex: 1;
+}
